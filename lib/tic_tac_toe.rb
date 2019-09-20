@@ -27,4 +27,17 @@ class TicTacToe
         end
     end
     
+    public
+    
+    def set_index(index, player)
+        index -= 1
+        
+        if validate_index(index)
+            @board[index] = player == 1 ? X_TOKEN : O_TOKEN
+            true
+        else
+            false
+        end
+    end
+    
 end
