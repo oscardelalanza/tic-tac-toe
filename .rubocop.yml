@@ -1,6 +1,5 @@
 AllCops:
   Exclude:
-    - "bin/*"
     - "db/**/*"
     - "config/**/*"
     - "Guardfile"
@@ -32,3 +31,7 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+Layout/IndentationWidth:
+  Width: 4
+Layout/TrailingWhitespace:
+  Enabled: false
