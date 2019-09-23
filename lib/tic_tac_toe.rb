@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class TicTacToe
-    
+    # player tokens
     X_TOKEN = 'X'
     O_TOKEN = 'O'
     
+    
+    # array to hold the movements
     @board = %w[1 2 3 4 5 6 7 8 9]
     
     # board rows
@@ -26,6 +28,9 @@ class TicTacToe
     
     private
     
+    # This method is used to validate if an position is already taken by a player
+    # @param index
+    # @return boolean
     def validate_index(index)
         if @board[index] == X_TOKEN || @board[index] == O_TOKEN
             false
@@ -34,6 +39,8 @@ class TicTacToe
         end
     end
 
+    # this method is used to evaluate if the player X win in any of the possible combinations on the board
+    # @return boolean
     def winner_x
         winner = false
     
@@ -52,6 +59,8 @@ class TicTacToe
         winner
     end
 
+    # this method is used to evaluate if the player Y win in any of the possible combinations on the board
+    # @return boolean
     def winner_o
         winner = false
         
@@ -72,18 +81,17 @@ class TicTacToe
     
     public
     
+    # this method is used to print the board on the terminal
     def display_board
-        if win_column || win_diagonal || win_row
-        
-        else
-            puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
-            puts '-----------'
-            puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
-            puts '-----------'
-            puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
-        end
+        puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+        puts '-----------'
+        puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+        puts '-----------'
+        puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
     
+    # this method is used to set a token on the board
+    # @return boolean
     def set_index(index, player)
         index -= 1
         
@@ -94,4 +102,8 @@ class TicTacToe
             false
         end
     end
+    
+    # this method is used to check if a winner combination is found
+    # @return boolean
+    def winner; end
 end
