@@ -23,14 +23,6 @@ class TicTacToe
     diag1 = [@board[0], @board[4], @board[8]]
     diag2 = [@board[2], @board[4], @board[6]]
     @diagonals = [diag1, diag2]
-
-    def display_board
-        puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
-        puts '-----------'
-        puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
-        puts '-----------'
-        puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
-    end
     
     private
     
@@ -41,8 +33,46 @@ class TicTacToe
             true
         end
     end
+
+    def win_row
+        winner = false
+    
+        @rows.each do |row|
+            winner = true if row.all?(X_TOKEN) || row.all?(O_TOKEN)
+        end
+    
+        winner
+    end
+
+    def win_column
+        winner = false
+    
+        @cols.each do |col|
+            winner = true if col.all?(X_TOKEN) || col.all?(O_TOKEN)
+        end
+    
+        winner
+    end
+
+    def win_diagonal
+        winner = false
+    
+        @diagonals.each do |diag|
+            winner = true if diag.all?(X_TOKEN) || diag.all?(O_TOKEN)
+        end
+    
+        winner
+    end
     
     public
+    
+    def display_board
+        puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+        puts '-----------'
+        puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+        puts '-----------'
+        puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+    end
     
     def set_index(index, player)
         index -= 1
@@ -53,35 +83,5 @@ class TicTacToe
         else
             false
         end
-    end
-    
-    def win_row
-        winner = false
-        
-        @rows.each do |row|
-            winner = true if row.all?(X_TOKEN) || row.all?(O_TOKEN)
-        end
-        
-        winner
-    end
-    
-    def win_column
-        winner = false
-        
-        @cols.each do |col|
-            winner = true if col.all?(X_TOKEN) || col.all?(O_TOKEN)
-        end
-        
-        winner
-    end
-    
-    def win_diagonal
-        winner = false
-        
-        @diagonals.each do |diag|
-            winner = true if diag.all?(X_TOKEN) || diag.all?(O_TOKEN)
-        end
-        
-        winner
     end
 end
