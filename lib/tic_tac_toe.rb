@@ -34,31 +34,37 @@ class TicTacToe
         end
     end
 
-    def win_row
+    def winner_x
         winner = false
     
         @rows.each do |row|
-            winner = true if row.all?(X_TOKEN) || row.all?(O_TOKEN)
+            winner = true if row.all?(X_TOKEN)
+        end
+        
+        @cols.each do |col|
+            winner = true if col.all?(X_TOKEN)
+        end
+        
+        @diagonals.each do |diag|
+            winner = true if diag.all?(X_TOKEN)
         end
     
         winner
     end
 
-    def win_column
+    def winner_o
         winner = false
+        
+        @rows.each do |row|
+            winner = true if row.all?(O_TOKEN)
+        end
     
         @cols.each do |col|
-            winner = true if col.all?(X_TOKEN) || col.all?(O_TOKEN)
+            winner = true if col.all?(O_TOKEN)
         end
-    
-        winner
-    end
-
-    def win_diagonal
-        winner = false
-    
+        
         @diagonals.each do |diag|
-            winner = true if diag.all?(X_TOKEN) || diag.all?(O_TOKEN)
+            winner = true if diag.all?(O_TOKEN)
         end
     
         winner
