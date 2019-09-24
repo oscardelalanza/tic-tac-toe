@@ -45,8 +45,7 @@ while time < 9
         end
     end
     
-    game.winner
-    # check board for winning combination
+    break if game.winner
 end
 
 game.display_board
