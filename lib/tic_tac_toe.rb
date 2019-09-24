@@ -4,8 +4,7 @@ class TicTacToe
     # player tokens
     X_TOKEN = 'X'
     O_TOKEN = 'O'
-    
-    
+
     # array to hold the movements
     @board = %w[1 2 3 4 5 6 7 8 9]
     
@@ -26,6 +25,10 @@ class TicTacToe
     diag2 = [@board[2], @board[4], @board[6]]
     @diagonals = [diag1, diag2]
     
+
+    def initialize
+    end
+
     private
     
     # This method is used to validate if an position is already taken by a player
@@ -90,6 +93,7 @@ class TicTacToe
         puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
     
+
     # this method is used to set a token on the board
     # @return boolean
     def set_index(index, player)

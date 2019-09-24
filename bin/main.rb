@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "./lib/tic_tac_toe.rb"
+require "./lib/player.rb"
+
 puts 'TIC TAC TOE'
 
 puts 'What is the player 1 name?'
@@ -12,23 +15,28 @@ puts player1.to_s + ' X vs ' + player2.to_s + ' O '
 time = 0
 
 # Array of board elements
-
-message = ': Choose the number of the square where you want to place your token'
+game = TicTacToe.new
+game_player1 = Player.new(player1)
+game_player2 = Player.new (player2)
 
 while time < 9
 
     # display board showing number of square to choose from
-
+    game.display_board
+    
     if time.even?
-        puts player1.to_s + message
-        # player1token = gets.chomp
+        puts player1token.to_s + "Its your turn to play"
+        player1token = gets.chomp
+        game_player1.set_index(player1token, player1)
         # check input to validate whether
     else
-        puts player2.to_s + message
-        # player2token = gets.chomp
+        puts player2token.to_s + "Its your turn to play"
+        player2token = gets.chomp
+        game_player2.set_index(player2token, player2)
         # check input to validate whether
     end
-    
+    game.winner
+
     time += 1
     puts 'The movement is on board'
 

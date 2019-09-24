@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 #
 class Player
+    attr_reader :player 
+    attr_reader :name
+
     @@players = 0
     
     def initialize(name)
