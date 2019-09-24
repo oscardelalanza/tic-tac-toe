@@ -129,13 +129,10 @@ class TicTacToe
     # this method is used to check if a winner combination is found
     # @return boolean
     def winner
-        win_player = {}
         if winner_x
-            win_player[:player] = 1
-            win_player
+            1
         elsif winner_o
-            win_player[:player] = 2
-            win_player
+            2
         else
             false
         end

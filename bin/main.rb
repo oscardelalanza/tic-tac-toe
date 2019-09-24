@@ -45,10 +45,23 @@ while time < 9
         end
     end
     
-    break if game.winner
+    win_hash = game.winner
+    
+    if win_hash == 1
+        puts
+        puts game_player1.name.capitalize + " is the winner"
+        break
+    elsif win_hash == 2
+        puts 
+        puts game_player2.name.capitalize + " is the winner"
+        break
+    elsif time == 9
+        puts 
+        puts 'It\'s a draw'
+    end
+
 end
 
 game.display_board
 
 puts 'The game is Over'
-puts 'The winner is Player ? / Draw'
