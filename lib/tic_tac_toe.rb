@@ -6,27 +6,27 @@ class TicTacToe
     O_TOKEN = 'O'
 
     # array to hold the movements
-    @board = %w[1 2 3 4 5 6 7 8 9]
-    
-    # board rows
-    row1 = [@board[0], @board[1], @board[2]]
-    row2 = [@board[3], @board[4], @board[5]]
-    row3 = [@board[6], @board[7], @board[8]]
-    @rows = [row1, row2, row3]
-    
-    # board columns
-    col1 = [@board[0], @board[3], @board[6]]
-    col2 = [@board[1], @board[4], @board[7]]
-    col3 = [@board[2], @board[5], @board[8]]
-    @cols = [col1, col2, col3]
-    
-    # board diagonals
-    diag1 = [@board[0], @board[4], @board[8]]
-    diag2 = [@board[2], @board[4], @board[6]]
-    @diagonals = [diag1, diag2]
-    
+    @board = []
 
     def initialize
+        @board = %w[1 2 3 4 5 6 7 8 9]
+
+        # board rows
+        row1 = [@board[0], @board[1], @board[2]]
+        row2 = [@board[3], @board[4], @board[5]]
+        row3 = [@board[6], @board[7], @board[8]]
+        @rows = [row1, row2, row3]
+
+        # board columns
+        col1 = [@board[0], @board[3], @board[6]]
+        col2 = [@board[1], @board[4], @board[7]]
+        col3 = [@board[2], @board[5], @board[8]]
+        @cols = [col1, col2, col3]
+
+        # board diagonals
+        diag1 = [@board[0], @board[4], @board[8]]
+        diag2 = [@board[2], @board[4], @board[6]]
+        @diagonals = [diag1, diag2]
     end
 
     private
@@ -93,7 +93,6 @@ class TicTacToe
         puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
     
-
     # this method is used to set a token on the board
     # @return boolean
     def set_index(index, player)
@@ -109,6 +108,7 @@ class TicTacToe
     
     # this method is used to check if a winner combination is found
     # @return boolean
+
     def winner
         winner = {}
         

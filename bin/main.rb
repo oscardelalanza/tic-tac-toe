@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "./lib/tic_tac_toe.rb"
-require "./lib/player.rb"
+require_relative "../lib/tic_tac_toe.rb"
+require_relative "../lib/player.rb"
 
 puts 'TIC TAC TOE'
 
@@ -20,23 +20,21 @@ game_player1 = Player.new(player1)
 game_player2 = Player.new (player2)
 
 while time < 9
-
     # display board showing number of square to choose from
     game.display_board
-    
+
     if time.even?
-        puts player1token.to_s + "Its your turn to play"
+        puts player1.to_s + ": Choose the number on which to place your token"
         player1token = gets.chomp
-        game_player1.set_index(player1token, player1)
+        game.set_index(player1token.to_i, game_player1)
         # check input to validate whether
     else
-        puts player2token.to_s + "Its your turn to play"
+        puts player2.to_s + ": Choose the number on which to place your token"
         player2token = gets.chomp
-        game_player2.set_index(player2token, player2)
+        game.set_index(player2token.to_i, game_player2)
         # check input to validate whether
     end
     game.winner
-
     time += 1
     puts 'The movement is on board'
 
