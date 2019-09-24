@@ -35,3 +35,6 @@ Layout/IndentationWidth:
   Width: 4
 Layout/TrailingWhitespace:
   Enabled: false
+  
+Style/ClassVars:
+  Enabled: false
