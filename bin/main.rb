@@ -24,12 +24,12 @@ while time < 9
     game.display_board
 
     if time.even?
-        puts player1.to_s + ": Choose the number on which to place your token"
+        puts player1.to_s + ': Choose the number on which to place your token'
         player1token = gets.chomp
         game.set_index(player1token.to_i, game_player1)
         # check input to validate whether
     else
-        puts player2.to_s + ": Choose the number on which to place your token"
+        puts player2.to_s + ': Choose the number on which to place your token'
         player2token = gets.chomp
         game.set_index(player2token.to_i, game_player2)
         # check input to validate whether
