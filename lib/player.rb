@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#
+
 class Player
     attr_reader :player 
     attr_reader :name
@@ -12,5 +12,4 @@ class Player
         @player = @@players
         @token = @@players == 1 ? 'X' : 'O'
     end
-    
 end

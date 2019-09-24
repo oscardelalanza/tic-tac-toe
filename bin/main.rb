@@ -26,20 +26,30 @@ while time < 9
     if time.even?
         puts player1.to_s + ': Choose the number on which to place your token'
         player1token = gets.chomp
-        game.set_index(player1token.to_i, game_player1)
-        # check input to validate whether
+        
+        if game.set_index(player1token.to_i, game_player1.player.to_i)
+            puts 'The movement is on board'
+            time += 1
+        else
+            puts 'Invalid position, try again'
+        end
     else
         puts player2.to_s + ': Choose the number on which to place your token'
         player2token = gets.chomp
-        game.set_index(player2token.to_i, game_player2)
-        # check input to validate whether
+        
+        if game.set_index(player2token.to_i, game_player2.player.to_i)
+            puts 'The movement is on board'
+            time += 1
+        else
+            puts 'Invalid position, try again'
+        end
     end
+    
     game.winner
-    time += 1
-    puts 'The movement is on board'
-
     # check board for winning combination
 end
+
+game.display_board
 
 puts 'The game is Over'
 puts 'The winner is Player ? / Draw'
