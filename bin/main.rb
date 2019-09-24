@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative "../lib/tic_tac_toe.rb"
-require_relative "../lib/player.rb"
+require_relative '../lib/tic_tac_toe.rb'
+require_relative '../lib/player.rb'
 
 puts 'TIC TAC TOE'
 
@@ -17,7 +17,7 @@ time = 0
 # Array of board elements
 game = TicTacToe.new
 game_player1 = Player.new(player1)
-game_player2 = Player.new (player2)
+game_player2 = Player.new(player2)
 
 while time < 9
     # display board showing number of square to choose from
