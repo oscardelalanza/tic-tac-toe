@@ -17,17 +17,6 @@ class TicTacToe
 
     private
     
-    # this method is used to check if the given element is a valid board position
-    # @param position
-    # @return boolean
-    def board_position(position)
-        if position.to_i >= 0 && position.to_i < 9
-            true
-        else
-            false
-        end
-    end
-    
     def rows
         # board rows
         row1 = [@board[0], @board[1], @board[2]]
