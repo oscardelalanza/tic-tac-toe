@@ -2,13 +2,17 @@
 
 class TicTacToe
     # player tokens
-    X_TOKEN = 'X'
-    O_TOKEN = 'O'
+    X_TOKEN = :X
+    O_TOKEN = :O
     
     attr_writer :board
+    attr_reader :player1
+    attr_reader :player2
     
-    def initialize
+    def initialize(player1, player2)
         @board = %w[1 2 3 4 5 6 7 8 9]
+        @player1 = player1
+        @player2 = player2
     end
 
     private
@@ -58,41 +62,24 @@ class TicTacToe
         [diag1, diag2]
     end    
 
-    # this method is used to evaluate if the player X win in any of the possible combinations on the board
+    # this method is used to evaluate if a winner combination is found
     # @return boolean
-    def winner_x
+    def combinations
         winner = false
     
         rows.each do |row|
-            winner = true if row.all?(X_TOKEN)
+            winner = X_TOKEN if row.all?(X_TOKEN)
+            winner = O_TOKEN if row.all?(O_TOKEN)
         end
         
         cols.each do |col|
-            winner = true if col.all?(X_TOKEN)
+            winner = X_TOKEN if col.all?(X_TOKEN)
+            winner = O_TOKEN if col.all?(O_TOKEN)
         end
         
         diagonals.each do |diag|
-            winner = true if diag.all?(X_TOKEN)
-        end
-    
-        winner
-    end
-
-    # this method is used to evaluate if the player Y win in any of the possible combinations on the board
-    # @return boolean
-    def winner_o
-        winner = false
-        
-        rows.each do |row|
-            winner = true if row.all?(O_TOKEN)
-        end
-    
-        cols.each do |col|
-            winner = true if col.all?(O_TOKEN)
-        end
-        
-        diagonals.each do |diag|
-            winner = true if diag.all?(O_TOKEN)
+            winner = X_TOKEN if diag.all?(X_TOKEN)
+            winner = O_TOKEN if diag.all?(O_TOKEN)
         end
     
         winner
@@ -116,7 +103,7 @@ class TicTacToe
         
         if board_position(index)
             if validate_index(index)
-                @board[index] = player == 1 ? X_TOKEN : O_TOKEN
+                @board[index] = player == @player1 ? X_TOKEN : O_TOKEN
                 true
             else
                 false
@@ -129,9 +116,9 @@ class TicTacToe
     # this method is used to check if a winner combination is found
     # @return boolean
     def winner
-        if winner_x
+        if combinations == X_TOKEN
             1
-        elsif winner_o
+        elsif combinations == O_TOKEN
             2
         else
             false
