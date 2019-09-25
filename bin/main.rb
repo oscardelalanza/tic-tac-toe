@@ -1,20 +1,23 @@
 # frozen_string_literal: true
 
 require_relative '../lib/tic_tac_toe.rb'
+require_relative '../lib/player'
 
 puts 'TIC TAC TOE'
 
 puts 'What is the player 1 name?'
-player1 = gets.chomp
+name_1 = gets.chomp
 
 puts 'What is the player 2 name?'
-player2 = gets.chomp
+name_2 = gets.chomp
+
+# game initialization
+player1 = Player.new(name_1, 1)
+player2 = Player.new(name_2, 2)
+game = TicTacToe.new(player1, player2)
 
 puts player1.to_s + ' X vs ' + player2.to_s + ' O '
 time = 0
-
-# game initialization
-game = TicTacToe.new(player1, player2)
 
 while time < 9
     # display board showing number of square to choose from
