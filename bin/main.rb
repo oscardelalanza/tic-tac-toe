@@ -4,6 +4,7 @@ require_relative '../lib/tic_tac_toe.rb'
 require_relative '../lib/player'
 require_relative '../lib/board'
 
+# getting info
 puts 'TIC TAC TOE'
 
 puts 'What is the player 1 name?'
@@ -18,15 +19,16 @@ player2 = Player.new(name2, 2)
 board = Board.new
 game = TicTacToe.new(player1, player2)
 
-puts player1.to_s + ' X vs ' + player2.to_s + ' O '
+# displaying the game
+puts player1.name + ' X vs ' + player2.name + ' O '
 time = 0
 
 while time < 9
     # display board showing number of square to choose from
-    game.display_board
+    board.display_board
 
     if time.even?
-        puts player1.to_s + ': Choose the number on which to place your token'
+        puts player1.name + ': Choose the number on which to place your token'
         player1token = gets.chomp
         
         if game.set_index(player1token.to_i, game.player1)
@@ -36,7 +38,7 @@ while time < 9
             puts 'Invalid position, try again'
         end
     else
-        puts player2.to_s + ': Choose the number on which to place your token'
+        puts player2.name + ': Choose the number on which to place your token'
         player2token = gets.chomp
         
         if game.set_index(player2token.to_i, game.player2)
