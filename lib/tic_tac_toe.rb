@@ -17,17 +17,6 @@ class TicTacToe
 
     private
     
-    # This method is used to validate if an position is already taken by a player
-    # @param index
-    # @return boolean
-    def validate_index(index)
-        if @board[index] == X_TOKEN || @board[index] == O_TOKEN
-            false
-        else
-            true
-        end
-    end
-
     # this method is used to check if the given element is a valid board position
     # @param position
     # @return boolean
