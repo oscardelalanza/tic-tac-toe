@@ -66,22 +66,47 @@ class TicTacToe
     # @return boolean
     def combinations
         winner = false
+        data = {}
     
-        rows.each do |row|
-            winner = X_TOKEN if row.all?(X_TOKEN)
-            winner = O_TOKEN if row.all?(O_TOKEN)
+        rows.each_with_index do |row, index|
+            next unless row.all?(X_TOKEN) || row.all?(O_TOKEN)
+            
+            data = {
+                comb: 1,
+                index: index
+            }
+            
+            winner = true
         end
         
-        cols.each do |col|
-            winner = X_TOKEN if col.all?(X_TOKEN)
-            winner = O_TOKEN if col.all?(O_TOKEN)
+        cols.each_with_index do |col, index|
+            next unless col.all?(X_TOKEN) || col.all?(O_TOKEN)
+            
+            data = {
+                comb: 2,
+                index: index
+            }
+            
+            winner = true
         end
         
-        diagonals.each do |diag|
-            winner = X_TOKEN if diag.all?(X_TOKEN)
-            winner = O_TOKEN if diag.all?(O_TOKEN)
+        diagonals.each_with_index do |diag, index|
+            next unless diag.all?(X_TOKEN) || diag.all?(O_TOKEN)
+            
+            data = {
+                comb: 3,
+                index: index
+            }
+            
+            winner = true
         end
-    
+
+        if winner
+            winner = rows[data[:index]].first if data[:comb] == 1
+            winner = cols[data[:index]].first if data[:comb] == 2
+            winner = diagonals[data[:index]].first if data[:comb] == 3
+        end
+        
         winner
     end
     
