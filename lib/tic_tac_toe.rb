@@ -90,23 +90,6 @@ class TicTacToe
     
     public
     
-    # this method is used to set a token on the board
-    # @return boolean
-    def set_index(index, player)
-        index -= 1
-        
-        if board_position(index)
-            if validate_index(index)
-                @board[index] = player == @player1 ? X_TOKEN : O_TOKEN
-                true
-            else
-                false
-            end
-        else
-            false
-        end
-    end
-    
     # this method is used to check if a winner combination is found
     # @return boolean
     def winner
