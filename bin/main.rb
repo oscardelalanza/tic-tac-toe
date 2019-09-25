@@ -2,18 +2,20 @@
 
 require_relative '../lib/tic_tac_toe.rb'
 require_relative '../lib/player'
+require_relative '../lib/board'
 
 puts 'TIC TAC TOE'
 
 puts 'What is the player 1 name?'
-name_1 = gets.chomp
+name1 = gets.chomp
 
 puts 'What is the player 2 name?'
-name_2 = gets.chomp
+name2 = gets.chomp
 
 # game initialization
-player1 = Player.new(name_1, 1)
-player2 = Player.new(name_2, 2)
+player1 = Player.new(name1, 1)
+player2 = Player.new(name2, 2)
+board = Board.new
 game = TicTacToe.new(player1, player2)
 
 puts player1.to_s + ' X vs ' + player2.to_s + ' O '
