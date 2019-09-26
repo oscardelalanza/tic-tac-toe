@@ -43,19 +43,19 @@ class TicTacToe
     def combinations(board)
         winner = false
     
-        rows(board).each_with_index do |row, index|
+        rows(board).each do |row|
             next unless row.all?(X_TOKEN) || row.all?(O_TOKEN)
             
             winner = row
         end
         
-        cols(board).each_with_index do |col, index|
+        cols(board).each do |col|
             next unless col.all?(X_TOKEN) || col.all?(O_TOKEN)
             
             winner = col
         end
         
-        diagonals(board).each_with_index do |diag, index|
+        diagonals(board).each do |diag|
             next unless diag.all?(X_TOKEN) || diag.all?(O_TOKEN)
             
             winner = diag
