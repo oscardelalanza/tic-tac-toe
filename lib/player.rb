@@ -2,8 +2,7 @@
 
 class Player
     
-    attr_reader :name
-    attr_reader :player_num
+    attr_reader :name, :player_num
     
     def initialize(name, player_num)
         @name = name
