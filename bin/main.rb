@@ -17,10 +17,10 @@ name2 = gets.chomp
 player1 = Player.new(name1, 1)
 player2 = Player.new(name2, 2)
 board = Board.new
-game = TicTacToe.new(player1, player2)
+game = TicTacToe.new(player1.name, player2.name)
 
 # displaying the game
-puts player1.name + ' X vs ' + player2.name + ' O '
+puts game.player1 + ' X vs ' + game.player2 + ' O '
 time = 0
 
 while time < 9
@@ -49,15 +49,15 @@ while time < 9
         end
     end
     
-    win_hash = game.winner
+    win_hash = game.winner(board.board)
     
     if win_hash == 1
         puts
-        puts game.player1.capitalize + ' is the winner'
+        puts game.player1.to_s.capitalize + ' is the winner'
         break
     elsif win_hash == 2
         puts 
-        puts game.player2.capitalize + ' is the winner'
+        puts game.player2.to_s.capitalize + ' is the winner'
         break
     elsif time == 9
         puts 
@@ -66,6 +66,6 @@ while time < 9
 
 end
 
-game.display_board
+board.display_board
 
 puts 'The game is Over'

@@ -5,6 +5,8 @@ class Board
     X_TOKEN = :X
     O_TOKEN = :O
     
+    attr_reader :board
+    
     def initialize
         @board = %w[1 2 3 4 5 6 7 8 9]
     end
