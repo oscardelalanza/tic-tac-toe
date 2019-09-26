@@ -31,7 +31,7 @@ while time < 9
         puts player1.name + ': Choose the number on which to place your token'
         player1token = gets.chomp
         
-        if game.set_index(player1token.to_i, game.player1)
+        if board.set_index(player1token.to_i, player1.player_num)
             puts 'The movement is on board'
             time += 1
         else
@@ -41,7 +41,7 @@ while time < 9
         puts player2.name + ': Choose the number on which to place your token'
         player2token = gets.chomp
         
-        if game.set_index(player2token.to_i, game.player2)
+        if board.set_index(player2token.to_i, player2.player_num)
             puts 'The movement is on board'
             time += 1
         else
