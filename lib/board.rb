@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Board
+    # player tokens
+    X_TOKEN = :X
+    O_TOKEN = :O
+    
     def initialize
         @board = %w[1 2 3 4 5 6 7 8 9]
     end
@@ -47,7 +51,7 @@ class Board
     
         if board_position(index)
             if validate_index(index)
-                @board[index] = player == @player1 ? X_TOKEN : O_TOKEN
+                @board[index] = player == 1 ? X_TOKEN : O_TOKEN
                 true
             else
                 false
