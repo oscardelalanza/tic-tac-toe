@@ -75,8 +75,6 @@ class TicTacToe
             1
         elsif array.all?(O_TOKEN)
             2
-        else
-            false
         end
     end
 end
