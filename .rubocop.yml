@@ -18,6 +18,10 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
+Metrics/CyclomaticComplexity:
+  Max: 12
+Metrics/PerceivedComplexity:
+  Max: 12
 
 Style/Documentation:
   Enabled: false
@@ -34,4 +38,7 @@ Layout/MultilineMethodCallIndentation:
 Layout/IndentationWidth:
   Width: 4
 Layout/TrailingWhitespace:
+  Enabled: false
+  
+Style/ClassVars:
   Enabled: false
