@@ -42,45 +42,23 @@ class TicTacToe
     # @return boolean
     def combinations(board)
         winner = false
-        data = {}
     
         rows(board).each_with_index do |row, index|
             next unless row.all?(X_TOKEN) || row.all?(O_TOKEN)
             
-            data = {
-                comb: 1,
-                index: index
-            }
-            
-            winner = true
+            winner = row
         end
         
         cols(board).each_with_index do |col, index|
             next unless col.all?(X_TOKEN) || col.all?(O_TOKEN)
             
-            data = {
-                comb: 2,
-                index: index
-            }
-            
-            winner = true
+            winner = col
         end
         
         diagonals(board).each_with_index do |diag, index|
             next unless diag.all?(X_TOKEN) || diag.all?(O_TOKEN)
             
-            data = {
-                comb: 3,
-                index: index
-            }
-            
-            winner = true
-        end
-
-        if winner
-            winner = rows(board)[data[:index]].first if data[:comb] == 1
-            winner = cols(board)[data[:index]].first if data[:comb] == 2
-            winner = diagonals(board)[data[:index]].first if data[:comb] == 3
+            winner = diag
         end
         
         winner
@@ -91,9 +69,12 @@ class TicTacToe
     # this method is used to check if a winner combination is found
     # @return boolean
     def winner(board)
-        if combinations(board) == X_TOKEN
+        array = [1]
+        array = combinations(board) if combinations(board)
+        
+        if array.all?(X_TOKEN)
             1
-        elsif combinations(board) == O_TOKEN
+        elsif array.all?(O_TOKEN)
             2
         else
             false
