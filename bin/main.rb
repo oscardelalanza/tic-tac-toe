@@ -25,7 +25,7 @@ time = 0
 
 while time < 9
     # display board showing number of square to choose from
-    board.display_board
+    puts board.display_board
 
     if time.even?
         puts player1.name + ': Choose the number on which to place your token'
@@ -66,6 +66,6 @@ while time < 9
 
 end
 
-board.display_board
+puts board.display_board
 
 puts 'The game is Over'
