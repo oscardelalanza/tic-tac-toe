@@ -4,15 +4,15 @@ class Board
     # player tokens
     X_TOKEN = :X
     O_TOKEN = :O
-    
+
     attr_reader :board
-    
+
     def initialize
         @board = %w[1 2 3 4 5 6 7 8 9]
     end
-    
+
     private
-    
+
     # This method is used to validate if an position is already taken by a player
     # @param index
     # @return boolean
@@ -34,7 +34,7 @@ class Board
             false
         end
     end
-    
+
     public
 
     # this method is used to print the board on the terminal
@@ -43,7 +43,7 @@ class Board
         row2 = " #{@board[3]} | #{@board[4]} | #{@board[5]}\n"
         row3 = " #{@board[6]} | #{@board[7]} | #{@board[8]}\n"
         spacer = "-----------\n"
-        
+
         row1 + spacer + row2 + spacer + row3
     end
 
@@ -51,7 +51,7 @@ class Board
     # @return boolean
     def set_index(index, player)
         index -= 1
-    
+
         if board_position(index)
             if validate_index(index)
                 @board[index] = player == 1 ? X_TOKEN : O_TOKEN
