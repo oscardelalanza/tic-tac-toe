@@ -42,3 +42,5 @@ Layout/TrailingWhitespace:
   
 Style/ClassVars:
   Enabled: false
+Style/BlockComments:
+  Enabled: false
