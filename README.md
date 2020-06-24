@@ -54,3 +54,13 @@ To clone the project into your local environment do the following
 👤 **Leonard Rwai**
 
 - [@rmauritsson](https://github.com/rmauritsson/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
