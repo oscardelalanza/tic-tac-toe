@@ -1,8 +1,7 @@
 # tic-tac-toe
 
-> In this project, We build a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. 
+In this project, We build a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. 
 
-![screenshot](./screenshot.png)
 ## Built with
 
 - Ruby
