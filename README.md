@@ -40,7 +40,7 @@ To clone the project in your local environment do the following.
 - After setting up the player names, the game will assign the token `X` for player 1 and the token `0` for player 2.
 - Immediately the game will ask for a position to `Player 1` and `Player 2` respectively. Just type de position number and
 switch turns with your opponent.
-![movement1](screenshots/movements.png)
+![movements](screenshots/movements.png)
 
 
 ### Run tests
