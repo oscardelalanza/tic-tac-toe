@@ -46,7 +46,9 @@ switch turns with your opponent.
 
 ### Run tests
 
-- This project doesn't contain tests
+- Run the command `rspec spec/board_spec.rb` to test the Board class
+- Run the command `rspec spec/player_spec.rb` to test the Player class
+- Run the command `rspec spec/tic_tac_toe_spec.rb` to test the TicTacToe class
 
 ## Authors
 
