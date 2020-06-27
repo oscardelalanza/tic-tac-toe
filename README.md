@@ -22,21 +22,26 @@ Tic-tac-toe (American English), noughts and crosses (British English), or Xs and
 
 ### Setup
 
-To clone the project in your local environment do the following
+To clone the project in your local environment do the following.
 
-- Open a new `terminal` window and navigate to the directory where the project will be stored
-- Run the command `git clone git@github.com:oscardelalanza/tic-tac-toe.git`
-- Run the command `cd tic-tac-toe` to enter the project directory
+- Open a new `terminal` window and navigate to the directory where the project will be stored.
+- Run the command `git clone git@github.com:oscardelalanza/tic-tac-toe.git`.
+- Run the command `cd tic-tac-toe` to enter the project directory.
 
 ### Install
 
-- Not needed
+- Not needed.
 
 ### Usage
 
-- To start the game run the command `ruby bin/main.rb`
-- Once you start the game, you must type the names of each player
+- To start the game run the command `ruby bin/main.rb`.
+- Once you start the game, you must type the names of each player.
 ![start](screenshots/start.png)
+- After setting up the player names, the game will assign the token `X` for player 1 and the token `0` for player 2.
+- Immediately the game will ask for a position to `Player 1` and `Player 2` respectively. Just type de position number and
+switch turns with your opponent.
+![movement1](screenshots/movements.png)
+
 
 ### Run tests
 
