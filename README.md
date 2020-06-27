@@ -41,7 +41,8 @@ To clone the project in your local environment do the following.
 - Immediately the game will ask for a position to `Player 1` and `Player 2` respectively. Just type de position number and
 switch turns with your opponent.
 ![movements](screenshots/movement.png)
-
+- If the game detect a `winner` or a `draw` the program will end and display the results.
+![winner](screenshots/winner.png)  
 
 ### Run tests
 
